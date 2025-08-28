@@ -1,0 +1,28 @@
+/* 본문의 기본 여백 설정 */
+body {
+  margin: 20px;
+  color: gray;
+}
+
+/* 상속 */
+/* index로 이동 색 변경 */
+a {
+  color: inherit;
+}
+
+/* 글씨 색상은 상속되나 보더는 상속되지 않는다 */
+.wrapper p.like {
+  color: purple;
+  border: 1px solid green;
+}
+
+/* 겹침 */
+body a + h1 + div#coding.wrapper p.like {
+  color: blue;
+}
+
+a + h1 + div#coding.wrapper p.like {
+  color: red;
+  /* color: red !important;/ */
+  /* important는 막 쓰면 ㄴㄴ */
+}
