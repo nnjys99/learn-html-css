@@ -1,15 +1,129 @@
-/* 전체 선택자 */
+/* 전체 선택자 가중치 0 */
 * {
   font-size: 24px;
 }
 
-/* 요소 선택자 */
+/* 요소 선택자 가중치 1 */
+body {
+  margin: 20px;
+}
 a {
   text-decoration: none;
   color: red;
 }
 
-/* 클래스 선택자    중요 */
+/* 요소 선택자. 보더는 숏핸드 방식이다. 값이 최소 3개*/
+p {
+  border: 2px solid blue;
+  color: gray;
+}
+
+/* 클래스 선택자  가중치 10 중요 */
 .like {
-  background-color: yellow;
+  background-color: var(--yellow);
+  border: 2px dashed green;
+}
+/* css 변수 theme.css에 있는 변수를 가져와서 쓰는것이다 사용자 지정 css/ */
+
+p {
+  color: black;
+}
+
+/* 선택자의 가중치에 따라 입력되는 것이 다르다 */
+
+/* 아이디 선택자  가중치 100 */
+/* 아이디 선택자는 재지정이 까다롭다 쓰는것을 비추천한다 */
+#lion {
+  background-color: var(--orange);
+}
+/* 클래스 선택자를 여러개 조합하더라고 아이디 선택자의 스타일을 재지정 할 수 없다  ex) a.b.c.d.e.*/
+.a.b.c.d.e.f.g.h.i.j.like {
+  background-color: aqua;
+}
+
+/* 속성 선택자 종류가 ^,*,~ 등등 여러가지가 있다.*/
+a[href^='https'] {
+  color: green;
+}
+
+/* 자손 결합자 */
+/* 중간에 공백 중요 */
+.bootcamp p {
+  color: gray;
+}
+
+/* 자식 결합자 */
+.bootcamp > blockquote > p {
+  padding: 10px;
+}
+
+/* 선택자 목록 (그룹화)*/
+a,
+h1,
+#lion {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* 가상 요소 선택자 :: 콜론이 2개 있으면 가상 요소이다 1개는 클래스*/
+/* before, after은 content와 함께 한다 */
+h1::before {
+  content: '멋사';
+}
+
+h1::after {
+  content: '15기';
+}
+
+p::before {
+  content: 'open';
+  font-size: 36px;
+  color: red;
+}
+
+p::first-letter {
+  font-size: 80px;
+  font-weight: 900;
+}
+/* 드래그 했을때 블럭이 파랑 바탕에 흰글씨로 나옴 */
+p::selection {
+  background-color: darkblue;
+  color: white;
+}
+
+/* 가상클래스 */
+h1:hover {
+  background-color: pink;
+}
+
+a:focus {
+  outline: 2px solid red;
+  outline-offset: 10px;
+}
+
+/* html에서 h1 tabindex="0" 로 만들어주면 가능하다 */
+h1:focus {
+  border: 2px dashed black;
+}
+
+/* 호버 포커스 엑티브는 링크와 비짓트보다 뒤에 선언해야 한다 */
+a:link {
+  color: purple;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: red;
+}
+/* css는 1부터 시작이다 */
+.frontend p:first-child {
+  font-size: 16px;
+}
+.frontend p:nth-child(2) {
+  font-size: 20px;
+  font-weight: 700;
 }
