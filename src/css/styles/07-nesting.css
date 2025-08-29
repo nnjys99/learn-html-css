@@ -1,0 +1,36 @@
+body {
+  margin: 20px;
+}
+
+/* CSS Nesting */
+.likelion {
+  background-color: #ffc;
+  /* 중첩 선택자를 쓸때는 관례상 빈줄을 하나 만든다 */
+
+  /* 자식선택자 */
+  > ul {
+    list-style-image: url(/src/assets/thumbnail/new.png);
+  }
+
+  /* 하위 선택자 문맥 선택자 */
+  ul {
+    padding-left: 40px;
+  }
+
+  li {
+    margin: 10px 0;
+
+    li:first-child {
+      color: red;
+    }
+  }
+
+  .sub-last {
+    background-color: #cff;
+
+    &:hover {
+      background-color: darkblue;
+      color: white;
+    }
+  }
+}
