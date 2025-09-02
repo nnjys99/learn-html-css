@@ -1,0 +1,30 @@
+body {
+  margin: 20px;
+}
+
+/* 유틸리티 바 */
+
+.utility-bar {
+  text-transform: uppercase;
+  display: flow-root;
+  font-size: 0;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    /* margin: 5px; */
+    /* float: left; */
+  }
+
+  a,
+  [aria-hidden='true'] {
+    display: inherit;
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+/* 앵커는 기본값이 밑줄인에 이렇게 해서 밑줄 사라지게함 */
+/* a {
+  text-decoration: none;
+  color: inherit;
+} */
