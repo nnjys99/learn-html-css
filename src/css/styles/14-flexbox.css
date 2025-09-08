@@ -1,0 +1,122 @@
+body {
+  margin: 20px;
+}
+/* 플렉스 박스 */
+/* 플렉스 디렉션 방향 설정 */
+/* 플랙스 컨테이너 관련 속성 */
+.like {
+  background-color: #cff;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 1000px;
+  block-size: 100px;
+  display: flex;
+  /* flex-direction: row; */
+  /* noqrap이 기본값 wrap으로 바꾸면 알아서 변경해주던 것을 멈춘다. */
+  /* flex-wrap: nowrap; */
+  /* 위의 2가지를 둘다 쓰는 속성이다 */
+  flex-flow: row, nowrap;
+  /* justify-content는 현재의 매인축이다 지금은 row라서 x축이 메인이다 */
+  justify-content: end;
+  /* 교차축 정렬 */
+  align-items: start;
+
+  /* 500안에 200 4개가 들어갈수 없으니 알아서 125로 변경해서 넣어준다 */
+  > div {
+    inline-size: 200px;
+    background-color: #cfc;
+  }
+}
+
+/* .like {
+  display: flow-root;
+
+  > div {
+    float: left;
+  }
+} */
+
+.lion {
+  background: #ffc;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 500px;
+  block-size: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+  /* align은 교차축 정렬 지금 row라서 메인은 x 교차는 y이다. */
+  align-items: center; /* 나중 */
+  align-content: center; /* 우선 */
+
+  > div {
+    inline-size: 200px;
+    background: aqua;
+  }
+}
+
+/* 플랙스 아이템 관련 속성 */
+.bootcamp {
+  background: salmon;
+  box-shadow: 0 0 0 1px rebeccapurple;
+  inline-size: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  > div {
+    inline-size: 125px;
+  }
+
+  .bootcamp-item1 {
+    background-color: #cff;
+    flex-shrink: 1;
+  }
+  .bootcamp-item2 {
+    background-color: #fff;
+    flex-shrink: 2;
+  }
+
+  /* 오더로 순서를 지정해주면 1번이라서 위로 올라갈겄같지만 실상은 밑으로 내려간다 그 이유는 나머지는 0(오토)인데 오더 한 값은 1이기 때문에 뒤로 밀리는것이다 
+  음수는 순서가 더 빠르기에 4번이 첫번째로 온다. */
+  .bootcamp-item3 {
+    background-color: #cfc;
+    flex-shrink: 1;
+    order: 1;
+  }
+  .bootcamp-item4 {
+    background-color: #ffc;
+    flex-shrink: 1;
+    order: -1;
+  }
+}
+
+.frontend {
+  background: pink;
+  box-shadow: 0 0 0 1px blue;
+  inline-size: 1000px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  > div {
+    /* inline-size: 125px; */
+    flex-basis: 0;
+  }
+  /* grow의 기본값은 0이다 */
+  .frontend-item1 {
+    background: skyblue;
+    flex-grow: 1;
+  }
+
+  .frontend-item2 {
+    background: silver;
+    flex-grow: 0;
+  }
+
+  .frontend-item3 {
+    background: lime;
+    flex-grow: 0;
+  }
+
+  .frontend-item4 {
+    background: salmon;
+    flex-grow: 1;
+  }
+}

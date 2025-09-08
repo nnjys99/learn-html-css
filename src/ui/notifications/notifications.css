@@ -1,0 +1,200 @@
+body {
+  margin: 20px;
+}
+
+.notification {
+  --black: #121212;
+  --green: #22be61;
+  --gray: #9b9a90;
+  --white: #fff;
+
+  --point-color: var(--green);
+  --text-color: var(--gray);
+  --bg-color: var(--white);
+
+  /* background-color: #fff;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 322px;
+  block-size: 84px;
+  display: flex;
+  flex-flow: row;
+
+  notification-icon {
+    inline-size: 88px;
+    align-items: center;
+  }
+  strong,
+  time {
+    color: #22be61;
+  }
+
+  p {
+    color: #9b9a90;
+  } */
+  border: 1px solid currentColor;
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 20px;
+  align-items: center;
+
+  .notification-icon {
+    flex: 0 0 auto;
+
+    rect {
+      fill: var(--point-color);
+    }
+  }
+
+  .notification-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 4px;
+    strong,
+    time {
+      color: var(--point-color);
+    }
+    strong {
+      /* color: var(--green); */
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    time {
+      /* color: var(--green); */
+      font-size: 0.6875rem;
+    }
+
+    p {
+      inline-size: 100%;
+      /* color: var(--gray); */
+      font-size: 0.875rem;
+    }
+  }
+}
+
+/* 화분 아이콘 색 바꾸기 */
+/* 레이아웃 */
+
+/* 내 코드 */
+/* .notification-wrapper {
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 30px;
+}
+
+@media (min-width: 601px) {
+  .notification-wrapper {
+    --gap: 20px;
+
+    flex-flow: row wrap;
+    column-gap: var(--gap);
+
+    .notification {
+      flex-grow: 1; 셋중 하나 선택 맨 밑이 가장 정확
+      flex: 1 1 0;
+      inline-size: calc(50% - (var(--gap) / 2));
+    }
+  }
+}
+
+@media (min-width: 1001px) {
+  .notification-wrapper {
+    --gap: 20px;
+
+    flex-flow: row wrap;
+    column-gap: var(--gap);
+
+    .notification {
+      flex-grow: 1; 셋중 하나 선택 맨 밑이 가장 정확
+      flex: 1 1 0; 
+      inline-size: calc(25% - (var(--gap) / 2));
+    }
+  }
+} */
+
+/* 선생님 코드 */
+/* .notification-wrapper {
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 30px;
+}
+
+@media all and (min-width: 601px) {
+  .notification-wrapper {
+    --gap: 20px;
+
+    flex-flow: row wrap;
+    column-gap: var(--gap);
+
+    .notification {
+      inline-size: calc(50% - (var(--gap) / 2));
+    }
+  }
+}
+
+@media all and (min-width: 1001px) {
+  .notification-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .notification {
+    inline-size: calc(25% - (var(--gap) / 2));
+  }
+} */
+
+/* 인라인 사이즈 사용 */
+/* .notification-wrapper {
+  --gap: 30px;
+
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: var(--gap);
+
+  .notification {
+    inline-size: 100%;
+
+    @media (width > 600px) {
+      inline-size: 50%;
+    }
+    @media (width > 1000px) {
+      inline-size: 25%;
+    }
+  }
+} */
+
+/* 다른방법 2 */
+.notification-wrapper {
+  --gap: 30px;
+
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: var(--gap);
+
+  @media (width > 600px) {
+    column-gap: var(--gap);
+  }
+  li {
+    display: contents;
+  }
+  .notification {
+    inline-size: 100%;
+
+    @media (width > 600px) {
+      inline-size: calc((100% - var(--gap) * 1) / 2);
+    }
+    @media (width > 1000px) {
+      inline-size: calc((100% - var(--gap) * 3) / 4);
+    }
+  }
+}
+
+/* li 로 갑자기 마크업이 바뀌었을 때 디스플레이 컨텐츠만 추가 해주면 다시 정상으로 돌아온다 */
